@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Board from './Board';
-import './style.css';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import Board from "./Board";
+import "./style.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      name: "React"
     };
   }
 
   render() {
     return (
       <div>
-      <h3>Tic Tac Toe</h3>
+        <h3>Tic Tac Toe</h3>
         <Board />
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
