@@ -16,36 +16,60 @@ class Board extends React.Component {
       squares: Array(9).fill(null),
       squareValue: "",
       isNextPlayer: true,
+      winner: "",
       winnerPossibilities: [
-        [0,1,2],
-        [3,4,5],
-        [6,7,8],
-        [0,3,6],
-        [1,4,7],
-        [2,5,8],
-        [1,4,8],
-        [2,4,6]        
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [1, 4, 8],
+        [2, 4, 6]
       ]
     };
   }
 
   handleSquare = i => {
-    const squares = this.state.squares;
-    squares[i] = this.state.isNextPlayer ? "X" : "O";
-    this.setState({
-      isNextPlayer: !this.state.isNextPlayer,
-      squares: squares
-    });
-    this.checkWinner()
+    if (!this.state.winner) {
+      const squares = this.state.squares;
+      squares[i] = this.state.isNextPlayer ? "X" : "O";
+      this.setState({
+        isNextPlayer: !this.state.isNextPlayer,
+        squares: squares
+      });
+      this.checkWinner();
+    }
   };
 
   checkWinner() {
-    console.log('winner')
+    this.state.winnerPossibilities.forEach(p => {
+      const [a, b, c] = p;
+      console.log(
+        a,
+        b,
+        c,
+        this.state.squares[a],
+        this.state.squares[b],
+        this.state.squares[c]
+      );
+      if (
+        this.state.squares[a] === this.state.squares[b] &&
+        this.state.squares[a] === this.state.squares[c]
+      ) {
+        this.setState({ winner: this.state.squares[a] });
+      }
+    });
   }
 
   render() {
     return (
       <React.Fragment>
+        <div>
+          <i>Next Player: </i>
+          {this.state.isNextPlayer ? "X" : "O"}
+        </div>
+        <br />
         <Square
           id="0"
           value={this.state.squares[0]}
@@ -93,6 +117,11 @@ class Board extends React.Component {
           value={this.state.squares[8]}
           onClick={() => this.handleSquare(8)}
         />
+        {this.state.winner && (
+          <div>
+            <i>Winner</i>: {this.state.winner}
+          </div>
+        )}
       </React.Fragment>
     );
   }
