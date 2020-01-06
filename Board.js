@@ -42,10 +42,14 @@ class Board extends React.Component {
         this.state.squares[a] === this.state.squares[b] &&
         this.state.squares[a] === this.state.squares[c]
       ) {
-        console.log("here", a, b, c);
         this.setState({ winner: this.state.squares[a] });
       }
     });
+    if(this.state.squares.filter(s => {
+        return s === null;
+      }).length === 0 && this.state.winner !== null){
+        this.setState({ winner: 'No winner. Please play again...' });
+      }
   }
 
   render() {
@@ -109,7 +113,7 @@ class Board extends React.Component {
         <br />
         {this.state.winner && (
           <div>
-            <i>Winner</i>: {this.state.winner}
+            <i>Winner</i>: <b>{this.state.winner}</b>
           </div>
         )}
       </React.Fragment>
