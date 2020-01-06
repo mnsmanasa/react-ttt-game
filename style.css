@@ -3,14 +3,8 @@ h1, p {
 }
 
 .square{
-  /* border: 1px solid black;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  display: inline-block; */
-  background: #fff;
+   float: left;
     border: 1px solid #999;
-    float: left;
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
@@ -20,4 +14,10 @@ h1, p {
     padding: 0;
     text-align: center;
     width: 34px;
+}
+
+.clearfix{
+    clear: both;
+    content: "";
+    display: table;
 }

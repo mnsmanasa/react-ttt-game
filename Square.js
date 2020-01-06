@@ -4,12 +4,14 @@ class Square extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squareValue: ""
+      squareValue: props.id,
+      gameStarter: 'X'
     };
   }
 
   handleSquare = () => {
-    this.setState({squareValue: 'X'})
+    this.setState({gameStarter: this.state.gameStarter === 'X'? 'X': 'O'})
+    this.setState({squareValue: this.state.gameStarter})
   };
 
   render() {

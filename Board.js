@@ -1,31 +1,32 @@
-import React from 'react';
-import Square from './Square';
+import React from "react";
+import Square from "./Square";
 
 class Board extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      value: '1'
-    }
+      value: "1",
+      squares: Array(9).fill(null)
+    };
   }
 
-  render(){
+  render() {
     return (
       <React.Fragment>
-      <Square id="1"/>
-      <Square id="2"/>
-      <Square id="3"/>
-      <br/>
-      <Square id="4"/>
-      <Square id="5"/>
-      <Square id="6"/>
-      <br/>
-      <Square id="7"/>
-      <Square id="8"/>
-      <Square id="9"/>
+        <Square id={this.state.squares[0]} />
+        <Square id={this.state.squares[1]} />
+        <Square id={this.state.squares[2]} />
+        <div className="clearfix" />
+        <Square id={this.state.squares[3]} />
+        <Square id={this.state.squares[4]} />
+        <Square id={this.state.squares[5]} />
+        <div className="clearfix" />
+        <Square id={this.state.squares[6]} />
+        <Square id={this.state.squares[7]} />
+        <Square id={this.state.squares[8]} />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Board
+export default Board;
