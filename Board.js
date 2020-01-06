@@ -47,7 +47,7 @@ class Board extends React.Component {
     });
     if(this.state.squares.filter(s => {
         return s === null;
-      }).length === 0 && this.state.winner !== null){
+      }).length === 0 && this.state.winner === null){
         this.setState({ winner: 'No winner. Please play again...' });
       }
   }
