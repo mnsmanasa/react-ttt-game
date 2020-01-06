@@ -4,12 +4,14 @@ class Board extends React.Component {
   constructor(){
     super();
     this.state = {
-
+      value: '1'
     }
   }
 
   render(){
-    return <div>board</div>
+    return (
+      <div className='square'>{this.state.value}</div>
+    )
   }
 }
 

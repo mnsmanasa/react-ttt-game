@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        hi <Board />
+        <Board />
       </div>
     );
   }
