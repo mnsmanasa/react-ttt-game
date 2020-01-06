@@ -14,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      <h3>Tic Tac Toe</h3>
         <Board />
       </div>
     );
