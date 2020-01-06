@@ -24,7 +24,7 @@ class Board extends React.Component {
         [0, 3, 6],
         [1, 4, 7],
         [2, 5, 8],
-        [1, 4, 8],
+        [0, 4, 8],
         [2, 4, 6]
       ]
     };
@@ -45,18 +45,11 @@ class Board extends React.Component {
   checkWinner() {
     this.state.winnerPossibilities.forEach(p => {
       const [a, b, c] = p;
-      console.log(
-        a,
-        b,
-        c,
-        this.state.squares[a],
-        this.state.squares[b],
-        this.state.squares[c]
-      );
       if (
         this.state.squares[a] === this.state.squares[b] &&
         this.state.squares[a] === this.state.squares[c]
       ) {
+        console.log('here',a,b,c)
         this.setState({ winner: this.state.squares[a] });
       }
     });
