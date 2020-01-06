@@ -1,14 +1,6 @@
 import React from "react";
 import Square from "./Square";
 
-function Square(props) {
-  return (
-    <div className="square" onClick={props.onClick}>
-      {props.value}
-    </div>
-  );
-}
-
 class Board extends React.Component {
   constructor() {
     super();
