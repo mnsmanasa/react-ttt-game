@@ -3,9 +3,21 @@ h1, p {
 }
 
 .square{
-  border: 1px solid black;
+  /* border: 1px solid black;
   width: 20px;
   height: 20px;
   text-align: center;
-  display: inline-block;
+  display: inline-block; */
+  background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
 }
