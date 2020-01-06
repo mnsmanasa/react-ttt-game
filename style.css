@@ -16,6 +16,10 @@ h1, p {
     width: 34px;
 }
 
+.square.no-pointers{
+  pointer-events: none
+}
+
 .clearfix{
     clear: both;
     content: "";

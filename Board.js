@@ -30,6 +30,7 @@ class Board extends React.Component {
         isNextPlayer: !this.state.isNextPlayer,
         squares: squares
       });
+      event.target.classList.add("no-pointers");
       this.checkWinner();
     }
   };
