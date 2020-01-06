@@ -1,4 +1,5 @@
 import React from 'react';
+import Square from './Square';
 
 class Board extends React.Component {
   constructor(){
@@ -10,7 +11,19 @@ class Board extends React.Component {
 
   render(){
     return (
-      <div className='square'>{this.state.value}</div>
+      <React.Fragment>
+      <Square id="1"/>
+      <Square id="2"/>
+      <Square id="3"/>
+      <br/>
+      <Square id="4"/>
+      <Square id="5"/>
+      <Square id="6"/>
+      <br/>
+      <Square id="7"/>
+      <Square id="8"/>
+      <Square id="9"/>
+      </React.Fragment>
     )
   }
 }
