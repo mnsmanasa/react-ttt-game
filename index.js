@@ -11,11 +11,15 @@ class App extends Component {
     };
   }
 
+  reRender = () => {
+    window.location.reload()
+  }
+
   render() {
     return (
       <div>
         <h3>Tic Tac Toe</h3>
-        <div className="play-again"><i>Play again</i></div>
+        <div className="play-again" onClick={this.reRender}><i>Play again</i></div>
         <Board />
       </div>
     );
