@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div>
         <h3>Tic Tac Toe</h3>
+        <div className="play-again"><i>Play again</i></div>
         <Board />
       </div>
     );
